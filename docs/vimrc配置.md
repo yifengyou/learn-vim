@@ -1,5 +1,34 @@
 # .vimrc配置
 
+```
+:set nocompatible   设置不兼容原始 vi 模式（必须设置在最开头）
+:set bs=?           设置BS键模式，现代编辑器为 :set bs=eol,start,indent
+:set sw=4           设置缩进宽度为 4
+:set ts=4           设置制表符宽度为 4
+:set noet           设置不展开 tab 成空格
+:set et             设置展开 tab 成空格
+:set winaltkeys=no  设置 GVim 下正常捕获 ALT 键
+:set nowrap         关闭自动换行
+:set ttimeout       允许终端按键检测超时（终端下功能键为一串ESC开头的扫描码）
+:set ttm=100        设置终端按键检测超时为100毫秒
+:set term=?         设置终端类型，比如常见的 xterm
+:set ignorecase     设置搜索是否忽略大小写
+:set smartcase      智能大小写，默认忽略大小写，除非搜索内容里包含大写字母
+:set list           设置显示制表符和换行符
+:set number         设置显示行号，禁止显示行号可以用 :set nonumber
+:set relativenumber 设置显示相对行号（其他行与当前行的距离）
+:set paste          进入粘贴模式（粘贴时禁用缩进等影响格式的东西）
+:set nopaste        结束粘贴模式
+:set spell          允许拼写检查
+:set hlsearch       设置高亮查找
+:set ruler          总是显示光标位置
+:set incsearch      查找输入时动态增量显示查找结果
+:set insertmode     Vim 始终处于插入模式下，使用 ctrl-o 临时执行命令
+:set all            列出所有选项设置情况
+:syntax on          允许语法高亮
+:syntax off         禁止语法高亮
+```
+
 
 “工欲善其事，必先利其器”。尽管 vim 非常强大，但默认配置的 vim 看起来还是比较朴素的，为了适合
 我们的开发需求，要对 vim 进行一些简单的配置。
