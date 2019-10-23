@@ -47,3 +47,5 @@
     * [NERDTree目录树](docs/Vim插件/NERDTree目录树.md)
     * [YouCompleteMe自动补齐](docs/Vim插件/YouCompleteMe自动补齐.md)
 * [.vimrc配置](docs/vimrc配置.md)
+* [本仓库写作指南](docs/本仓库写作指南.md)
+
