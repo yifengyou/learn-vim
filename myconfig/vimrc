@@ -1,0 +1,113 @@
+
+"set colorcolumn=120
+set number
+set relativenumber
+"set smartindent
+set tabstop=4
+set shiftwidth=4
+""set softtabstop=4
+set paste
+syntax on
+set fenc=utf-8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+set noexpandtab
+
+filetype plugin on
+set list
+set listchars=tab:>-,trail:-
+set laststatus=2
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]
+set autoindent
+set noic
+syntax on
+set hlsearch
+colorscheme desert
+set nocompatible
+set backspace=indent,eol,start
+
+set showtabline=2
+filetype plugin on
+
+" vim-plug
+call plug#begin('~/.vim/plugged')
+"" left directory tree plug - nerdtree config
+Plug 'preservim/nerdtree'
+"" nerdtree git plug
+Plug 'Xuyuanp/nerdtree-git-plugin'
+"" light line plug
+Plug 'itchyny/lightline.vim'
+"" coc plug - coc config
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"" auto pairs
+Plug 'jiangmiao/auto-pairs'
+"" under line status
+Plug 'vim-airline/vim-airline'
+"" under line status themes
+Plug 'vim-airline/vim-airline-themes'
+"" tags list plug
+Plug 'liuchengxu/vista.vim'
+call plug#end()
+
+" nerdtree plug config
+"" auto open nerdtree
+autocmd VimEnter * if argc() == 1 | NERDTree | wincmd p | else | NERDTree | endif " always open nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " auto close when nerd is last window
+let g:NERDTreeDirArrowExpandable = '+' " show which can expandable
+let g:NERDTreeDirArrowCollapsible = '-' " show which can collapsible
+let g:NERDTreeHidden = 1 " show hidden file or not
+let NERDTreeShowHidden = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeShowBookmarks = 1
+let g:NERDTreeShowLineNumbers=1 " show line number or not
+
+" nerdtree git plug config
+let g:NERDTreeGitStatusShowIgnored = 1
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+	\ "Modified"  : "✹",
+	\ "Staged"    : "✚",
+	\ "Untracked" : "✭",
+	\ "Renamed"   : "➜",
+	\ "Unmerged"  : "═",
+	\ "Deleted"   : "✖",
+	\ "Dirty"     : "✗",
+	\ "Clean"     : "✔︎",
+	\ 'Ignored'   : '☒',
+	\ "Unknown"   : "?"
+	\ }
+
+
+
+" coc config
+let g:coc_disable_startup_warning = 1
+
+
+
+" auto pairs config
+let g:AutoPairs = {'(':')', '[':']', '{':'}', "'":"'", '"':'"'}
+
+
+" under line status
+set laststatus=2  " always show
+let g:airline_powerline_fonts = 1  " support power line
+let g:airline#extensions#tabline#enabled = 1 " show win tab and buffer
+let g:airline_theme='moloai'  " theme color
+if !exists('g:airline_symbols')
+let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '>'
+let g:airline_left_alt_sep = '->'
+let g:airline_right_sep = '<'
+let g:airline_right_alt_sep = '->'
+let g:airline_symbols.linenr = '-'
+let g:airline_symbols.branch = '~'
+
+
+" hotkey map
+map <C-n> :NERDTreeToggle<CR>
+
+
+
+
